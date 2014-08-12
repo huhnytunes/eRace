@@ -1,29 +1,39 @@
-<h1>Listing goals</h1>
+<div class="row">
 
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th>Time frame</th>
-      <th>Complete</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="col-md-6"> 
+    <h1>Goals</h1>
 
-  <tbody>
-    <% @goals.each do |goal| %>
-      <tr>
-        <td><%= goal.description %></td>
-        <td><%= goal.time_frame %></td>
-        <td><%= goal.complete %></td>
-        <td><%= link_to 'Show', goal %></td>
-        <td><%= link_to 'Edit', edit_goal_path(goal) %></td>
-        <td><%= link_to 'Destroy', goal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <table>
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Time frame</th>
+          <th>Complete</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-<br>
+      <tbody>
+        <% @goals.each do |goal| %>
+          <tr>
+            <td><%= goal.description %></td>
+            <td><%= goal.time_frame %></td>
+            <td><%= goal.complete %></td>
+            <td><%= link_to 'Show', goal %></td>
+            <td><%= link_to 'Edit', edit_goal_path(goal) %></td>
+            <td><%= link_to 'Destroy', goal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-<%= link_to 'New Goal', new_goal_path %>
+    <br>
+
+    <%= link_to 'New Goal', new_goal_path %>
+  </div> 
+
+  <div class="col-md-6">
+    <h1>Completed</h1> 
+  </div> 
+
+</div> 
